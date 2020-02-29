@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import {useStaticQuery, graphql} from 'gatsby';
 
 import Header from './Header';
-import './layout.css';
+import './Layout.css';
 
-const Layout = ({children}) => {
+function Layout({children}) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,7 +23,7 @@ const Layout = ({children}) => {
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875re\m 1.45rem`
+          padding: `0 1.0875rem 1.45rem`
         }}
       >
         <main>{children}</main>
@@ -35,7 +35,7 @@ const Layout = ({children}) => {
       </div>
     </>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
