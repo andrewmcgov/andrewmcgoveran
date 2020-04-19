@@ -12,13 +12,13 @@ function Header({siteTitle}) {
       <nav>
         <ul className={styles.Nav}>
           <li className={styles.NavItem}>
-            <Link to="/">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li className={styles.NavItem}>
-            <Link to="/">Posts</Link>
+            <Link to="/posts">Posts</Link>
           </li>
           <li className={styles.NavItem}>
-            <Link to="/">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>
@@ -27,11 +27,11 @@ function Header({siteTitle}) {
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: ``
+  siteTitle: ``,
 };
 
 export default Header;

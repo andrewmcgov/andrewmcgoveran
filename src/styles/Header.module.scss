@@ -1,14 +1,20 @@
 .Header {
   display: flex;
   justify-content: space-between;
-  max-width: $max-width;
+  align-items: center;
   margin: 0 auto;
   padding: 20px 0;
 }
 
 .Title {
+  color: $dark-text;
+  font-size: 3.5rem;
   a {
-    color: $dark-text;
+    font-size: inherit;
+    color: inherit;
+    &:hover {
+      color: $primary-color;
+    }
   }
 }
 
@@ -19,4 +25,8 @@
 
 .NavItem {
   padding-left: 10px;
+  font-size: 2rem;
+  a {
+    font-size: inherit;
+  }
 }

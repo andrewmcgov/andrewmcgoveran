@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
-import About from '../components/About';
+import Contact from '../components/Contact';
 
-function AboutPage() {
+function ContactPage() {
   return (
     <Layout>
-      <SEO title="About" />
-      <About />
+      <SEO title="Posts" />
+      <Contact />
     </Layout>
   );
 }
 
-export default AboutPage;
+export default ContactPage;
