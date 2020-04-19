@@ -1,0 +1,22 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.Title {
+  a {
+    color: $dark-text;
+  }
+}
+
+.Nav {
+  display: flex;
+  list-style-type: none;
+}
+
+.NavItem {
+  padding-left: 10px;
+}
