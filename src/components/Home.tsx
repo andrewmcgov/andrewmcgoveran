@@ -8,11 +8,8 @@ function Home() {
         I'm a Web Developer passionate about learning and teaching.
       </span>
       <span className={styles.ShortBio}>
-        I work at{' '}
-        <a href="https://www.shopify.ca/" target="_blank">
-          Shopify
-        </a>
-        , helping make commerce better for everyone.
+        I work at <a href="https://www.shopify.ca/">Shopify</a>, helping make
+        commerce better for everyone.
       </span>
     </div>
   );
