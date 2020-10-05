@@ -9,7 +9,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: 600;
 }
 
@@ -19,7 +19,7 @@ a,
 ul,
 li,
 div {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   color: $dark-text;
   font-size: 1.6rem;
 }
@@ -27,4 +27,8 @@ div {
 a {
   text-decoration: none;
   color: $primary-color;
+}
+
+p {
+  line-height: 2.3rem;
 }

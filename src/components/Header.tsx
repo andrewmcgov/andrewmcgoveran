@@ -1,7 +1,7 @@
-import {Link} from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styles from '../styles/Header.module.scss';
+import {Link} from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import styles from "../styles/Header.module.scss";
 
 function Header({siteTitle}) {
   return (
@@ -15,7 +15,7 @@ function Header({siteTitle}) {
             <Link to="/about">About</Link>
           </li>
           <li className={styles.NavItem}>
-            <Link to="/posts">Posts</Link>
+            <Link to="/blog">Blog</Link>
           </li>
           <li className={styles.NavItem}>
             <Link to="/contact">Contact</Link>
