@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
-import Helmet from 'react-helmet';
-import {useStaticQuery, graphql} from 'gatsby';
+import React from "react";
+import Helmet from "react-helmet";
+import {useStaticQuery, graphql} from "gatsby";
 
 interface Props {
   description?: string;
@@ -16,7 +16,7 @@ interface Props {
   title: string;
 }
 
-function SEO({description = '', lang = 'en', meta = [], title}: Props) {
+function SEO({description = "", lang = "en", meta = [], title}: Props) {
   const {site} = useStaticQuery(
     graphql`
       query {
@@ -76,9 +76,9 @@ function SEO({description = '', lang = 'en', meta = [], title}: Props) {
       ].concat(meta)}
       link={[
         {
-          rel: 'stylesheet',
+          rel: "stylesheet",
           href:
-            'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,600;1,600&family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap',
+            "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,600;1,600&family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap",
         },
       ]}
     />
