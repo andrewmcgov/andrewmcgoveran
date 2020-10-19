@@ -20,7 +20,7 @@ ul,
 li,
 div {
   font-family: "Libre Franklin", sans-serif;
-  color: $dark-text;
+  color: $primary-text;
   font-size: 1.6rem;
 }
 
@@ -31,10 +31,14 @@ a {
   h2,
   h3,
   p {
-    color: $dark-text;
+    color: $primary-text;
   }
 }
 
 p {
   line-height: 2.3rem;
+}
+
+body {
+  background-color: #181818;
 }

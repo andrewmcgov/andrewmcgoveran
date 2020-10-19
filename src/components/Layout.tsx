@@ -2,12 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useStaticQuery, graphql} from 'gatsby';
 import styles from '../styles/Layout.module.scss';
-
-import Header from './Header';
+import {classNames} from '../utilities';
 import '../styles/normalize.css';
 import '../styles/global.scss';
+import Header from './Header';
+import Footer from './Footer';
 
-function Layout({children}) {
+interface Props {
+  children: JSX.Element[];
+  fullWidth?: boolean;
+}
+
+function Layout({children, fullWidth = false}: Props) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -19,14 +25,12 @@ function Layout({children}) {
   `);
 
   return (
-    <div className={styles.Wrapper}>
+    <div
+      className={classNames(styles.Wrapper, fullWidth && styles.FullWrapper)}
+    >
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
+      <Footer />
     </div>
   );
 }

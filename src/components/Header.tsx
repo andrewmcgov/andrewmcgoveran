@@ -1,9 +1,13 @@
-import {Link} from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-import styles from "../styles/Header.module.scss";
+import {Link} from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import styles from '../styles/Header.module.scss';
 
-function Header({siteTitle}) {
+interface Props {
+  siteTitle: string;
+}
+
+function Header({siteTitle}: Props) {
   return (
     <header className={styles.Header}>
       <h2 className={styles.Title}>

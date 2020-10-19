@@ -1,8 +1,8 @@
-import React from "react";
-import {graphql, PageProps, Link} from "gatsby";
-import Layout from "../components/Layout";
-import SEO from "../components/Seo";
-import Page from "../components/Page";
+import React from 'react';
+import {graphql, PageProps, Link} from 'gatsby';
+import Layout from '../components/Layout';
+import SEO from '../components/Seo';
+import Page from '../components/Page';
 
 type PostPreviewEdge = {
   node: {

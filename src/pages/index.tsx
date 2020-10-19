@@ -6,7 +6,7 @@ import Home from '../components/Home';
 
 function IndexPage() {
   return (
-    <Layout>
+    <Layout fullWidth>
       <SEO title="Home" />
       <Home />
     </Layout>
