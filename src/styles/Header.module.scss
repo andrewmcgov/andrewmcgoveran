@@ -3,11 +3,13 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 1rem 0;
+  width: $max-width;
 }
 
 .Title {
-  color: $dark-text;
+  margin: 0;
+  color: $primary-text;
   font-size: 3.5rem;
   a {
     font-size: inherit;

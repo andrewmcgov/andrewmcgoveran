@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from '../styles/Page.module.scss';
 
-function Page({title, children}) {
+interface Props {
+  title: string;
+  children: JSX.Element[] | JSX.Element;
+}
+
+function Page({title, children}: Props) {
   return (
     <main>
       {title && <h1 className={styles.Title}>{title}</h1>}
