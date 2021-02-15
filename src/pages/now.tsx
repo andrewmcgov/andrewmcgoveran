@@ -8,11 +8,11 @@ function NowPage() {
   return (
     <Layout>
       <Seo title="Now" />
-      <Page title="What im doing now">
+      <Page title="What I'm doing now">
         <ul>
           <li>Living in Ottawa, Ontario</li>
           <li>Working at Shopify</li>
-          <li>Learning some Ruby on Rails</li>
+          <li>Learning some Rails</li>
           <li>
             Trying to get some exercise during quarentine by riding my bike
             trainer on Zwift

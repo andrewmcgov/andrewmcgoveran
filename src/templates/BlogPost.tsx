@@ -24,15 +24,17 @@ export default function BlogPost(props: BlogPostProps) {
 
   return (
     <Layout>
-      <Page title={frontmatter.title}>
-        <Seo title={frontmatter.title} />
-        <span className={styles.Meta}>{frontmatter.date}</span>
+      <article>
+        <Page title={frontmatter.title}>
+          <Seo title={frontmatter.title} />
+          <span className={styles.Meta}>{frontmatter.date}</span>
 
-        <div
-          className={styles.Content}
-          dangerouslySetInnerHTML={{__html: html}}
-        />
-      </Page>
+          <div
+            className={styles.Content}
+            dangerouslySetInnerHTML={{__html: html}}
+          />
+        </Page>
+      </article>
     </Layout>
   );
 }
