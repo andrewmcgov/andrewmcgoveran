@@ -1,8 +1,9 @@
 .Footer {
-  max-width: $max-width;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
   padding: 3rem;
-  border-top: 1px solid lightblue;
   margin-top: 3rem;
+  font-size: 1.2rem;
+  @include border-top-gradient;
 }

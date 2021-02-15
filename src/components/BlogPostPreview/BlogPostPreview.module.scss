@@ -1,0 +1,13 @@
+.BlogPostPreview {
+  a {
+    text-decoration: none;
+  }
+}
+
+.Heading {
+  margin-bottom: 1rem;
+}
+
+.Meta {
+  @include meta-text;
+}

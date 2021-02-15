@@ -1,17 +1,20 @@
 import {Link} from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
-import styles from '../styles/Header.module.scss';
+import styles from './Header.module.scss';
 
 interface Props {
   siteTitle: string;
 }
 
-function Header({siteTitle}: Props) {
+export function Header({siteTitle}: Props) {
   return (
     <header className={styles.Header}>
       <h2 className={styles.Title}>
-        <Link to="/">{siteTitle}</Link>
+        <Link to="/">
+          Andrew
+          <br />
+          McGoveran
+        </Link>
       </h2>
       <nav>
         <ul className={styles.Nav}>
@@ -22,20 +25,10 @@ function Header({siteTitle}: Props) {
             <Link to="/blog">Blog</Link>
           </li>
           <li className={styles.NavItem}>
-            <Link to="/contact">Contact</Link>
+            <Link to="/now">Now</Link>
           </li>
         </ul>
       </nav>
     </header>
   );
 }
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
-
-export default Header;

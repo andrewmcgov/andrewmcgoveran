@@ -1,8 +1,9 @@
-import React from "react";
-import {graphql, PageProps} from "gatsby";
-import SEO from "../components/Seo";
-import Layout from "../components/Layout";
-import styles from "../styles/BlogPost.module.scss";
+import React from 'react';
+import {graphql, PageProps} from 'gatsby';
+import {Seo} from '../components/Seo';
+import {Layout} from '../components/Layout';
+import {Page} from '../components/Page';
+import styles from '../styles/BlogPost.module.scss';
 
 type PageQuery = {
   markdownRemark: {
@@ -18,20 +19,20 @@ type PageQuery = {
 type BlogPostProps = PageProps<PageQuery>;
 
 export default function BlogPost(props: BlogPostProps) {
-  console.log(props);
-  const {markdownRemark} = props.data; // data.markdownRemark holds your post data
+  const {markdownRemark} = props.data;
   const {frontmatter, html} = markdownRemark;
+
   return (
     <Layout>
-      <SEO title={frontmatter.title} />
-      <div>
-        <h1>{frontmatter.title}</h1>
-        <p className={styles.Date}>{frontmatter.date}</p>
+      <Page title={frontmatter.title}>
+        <Seo title={frontmatter.title} />
+        <span className={styles.Meta}>{frontmatter.date}</span>
+
         <div
-          className="blog-post-content"
+          className={styles.Content}
           dangerouslySetInnerHTML={{__html: html}}
         />
-      </div>
+      </Page>
     </Layout>
   );
 }

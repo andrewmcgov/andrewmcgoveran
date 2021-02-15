@@ -1,20 +1,10 @@
 import React from 'react';
 import {graphql, PageProps, Link} from 'gatsby';
-import Layout from '../components/Layout';
-import SEO from '../components/Seo';
-import Page from '../components/Page';
-
-type PostPreviewEdge = {
-  node: {
-    id: string;
-    excerpt: string;
-    frontmatter: {
-      date: string;
-      slug: string;
-      title: string;
-    };
-  };
-};
+import {PostPreviewEdge} from '../types';
+import {Layout} from '../components/Layout';
+import {Seo} from '../components/Seo';
+import {Page} from '../components/Page';
+import {BlogPostPreview} from '../components/BlogPostPreview';
 
 type PageQuery = {
   allMarkdownRemark: {
@@ -25,23 +15,14 @@ type PageQuery = {
 type BlogProps = PageProps<PageQuery>;
 
 function BlogPage({data}: BlogProps) {
-  const postsMarkup = data.allMarkdownRemark.edges.map(({node}) => {
-    const {id, excerpt, frontmatter} = node;
-
-    return (
-      <div key={id}>
-        <Link to={frontmatter.slug}>
-          <h2>{frontmatter.title}</h2>
-          <p>{excerpt}</p>
-        </Link>
-      </div>
-    );
+  const postsMarkup = data.allMarkdownRemark.edges.map(post => {
+    return <BlogPostPreview post={post} />;
   });
 
   return (
     <Layout>
-      <SEO title="Blog" />
-      <Page title="Blog!">{postsMarkup}</Page>
+      <Seo title="Blog" />
+      <Page title="Blog">{postsMarkup}</Page>
     </Layout>
   );
 }

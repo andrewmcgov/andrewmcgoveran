@@ -4,13 +4,25 @@ html {
   font-size: 10px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: "Fira Sans", sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   font-weight: 600;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2.5rem;
 }
 
 p,
@@ -19,26 +31,21 @@ a,
 ul,
 li,
 div {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   color: $primary-text;
+}
+
+p,
+li {
   font-size: 1.6rem;
+  line-height: 2.5rem;
 }
 
-a {
-  text-decoration: none;
-  color: $primary-color;
-  h1,
-  h2,
-  h3,
-  p {
-    color: $primary-text;
+h1,
+h2,
+h3,
+h4 {
+  a {
+    text-decoration: none;
   }
-}
-
-p {
-  line-height: 2.3rem;
-}
-
-body {
-  background-color: #181818;
 }

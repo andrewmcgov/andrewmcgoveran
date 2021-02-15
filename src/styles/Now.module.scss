@@ -1,0 +1,7 @@
+.Info {
+  @include text-gradient;
+
+  a {
+    text-decoration: none;
+  }
+}

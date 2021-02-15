@@ -1,0 +1,14 @@
+.Wrapper {
+  max-width: $max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.FullWrapper {
+  max-width: 1600px;
+}

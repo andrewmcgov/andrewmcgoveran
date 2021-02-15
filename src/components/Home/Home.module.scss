@@ -1,0 +1,32 @@
+.Splash {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    height: 300px;
+  }
+}
+
+.Content {
+  max-width: 600px;
+  width: 100%;
+}
+
+.Heading {
+  font-size: 5rem;
+
+  @include mobile {
+    font-size: 4rem;
+  }
+}
+
+.Gradient {
+  @include text-gradient;
+}
+
+.Tagline {
+  font-size: 2rem;
+  line-height: 3rem;
+}

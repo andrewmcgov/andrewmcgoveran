@@ -1,17 +1,11 @@
 ---
-slug: "/blog/2020-10-04-my-first-post"
-date: "2020-10-04"
-title: "Hello world"
+slug: '/blog/2021-02-15-hello-world'
+date: '2021-02-15'
+title: 'Hello world'
 ---
 
-Hello World. Welcome to my blog where I will shere things I'm learning.
+I keep reading that the best way to solidify your knowledge is to write about it. I've set up this site as a way to learn in public, document some helpful info, and have an ongoing side project to tinker on. As a self taught developer, I owe my carrer to the wonderful people who have shared their knowlede online. Hopefully I can pay it forward a bit here.
 
-Phasellus in mattis turpis. Morbi sed nisl mauris. Cras ut dui vel tellus vehicula lacinia. Pellentesque tincidunt porttitor nisl id molestie. Nulla sed porta arcu, quis commodo eros. Integer eu convallis nulla. Proin porta convallis tempus. Nullam vitae ex at diam sagittis cursus vel tincidunt nisi. Maecenas a nibh vulputate mi congue feugiat vitae eu mauris. Fusce nisi justo, lobortis sit amet mi et, dignissim ornare ipsum.
+If you don't know me, I'm a web developer living in Ottawa. I'm a huge Toronto Maple Leafs fan, and I like playing music. Check out my [now](/now) and [about](/about) pages for a bit more info.
 
-Aliquam vestibulum mauris sit amet tincidunt condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tempor mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et rutrum quam. Morbi ultrices velit in metus interdum, quis vulputate nibh accumsan. Vivamus egestas arcu urna, eu fringilla nisi aliquet eu. Phasellus in mattis turpis. Morbi sed nisl mauris. Cras ut dui vel tellus vehicula lacinia. Pellentesque tincidunt porttitor nisl id molestie. Nulla sed porta arcu, quis commodo eros. Integer eu convallis nulla. Proin porta convallis tempus. Nullam vitae ex at diam sagittis cursus vel tincidunt nisi. Maecenas a nibh vulputate mi congue feugiat vitae eu mauris. Fusce nisi justo, lobortis sit amet mi et, dignissim ornare ipsum. Aliquam vestibulum mauris sit amet tincidunt condimentum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tempor mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et rutrum quam. Morbi ultrices velit in metus interdum, quis vulputate nibh accumsan. Vivamus egestas arcu urna, eu fringilla nisi aliquet eu.
-
-Phasellus in mattis turpis. Morbi sed nisl mauris. Cras ut dui vel tellus vehicula lacinia. Pellentesque tincidunt porttitor nisl id molestie. Nulla sed porta arcu, quis commodo eros. Integer eu convallis nulla. Proin porta convallis tempus. Nullam vitae ex at diam sagittis cursus vel tincidunt nisi. Maecenas a nibh vulputate mi congue feugiat vitae eu mauris. Fusce nisi justo, lobortis sit amet mi et, dignissim ornare ipsum.
-
-Aliquam vestibulum mauris sit amet tincidunt condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tempor mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et rutrum quam. Morbi ultrices velit in metus interdum, quis vulputate nibh accumsan. Vivamus egestas arcu urna, eu fringilla nisi aliquet eu. Phasellus in mattis turpis. Morbi sed nisl mauris. Cras ut dui vel tellus vehicula lacinia. Pellentesque tincidunt porttitor nisl id molestie. Nulla sed porta arcu, quis commodo eros. Integer eu convallis nulla. Proin porta convallis tempus. Nullam vitae ex at diam sagittis cursus vel tincidunt nisi. Maecenas a nibh vulputate mi congue feugiat vitae eu mauris. Fusce nisi justo, lobortis sit amet mi et, dignissim ornare ipsum. Aliquam vestibulum mauris sit amet tincidunt condimentum.
+You can expect posts mostly about JavaScript, TypeScript and React. I'll maybe mix in some personal stuff here and there too, like if the Leafs ever win a playoff series or if the pandemic ever ends and we get to travel again.

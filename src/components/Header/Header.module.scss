@@ -1,0 +1,55 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 100%;
+  max-width: $max-width;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.Title {
+  margin: 0;
+  font-size: 4rem;
+  @include text-gradient;
+
+  @include mobile {
+    font-size: 2.5rem;
+  }
+}
+
+.Nav {
+  display: flex;
+  list-style-type: none;
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.NavItem {
+  padding-left: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+
+  @include mobile {
+    font-size: 1.5rem;
+    text-align: right;
+
+    &:not(:last-child) {
+      padding-bottom: 1rem;
+    }
+  }
+
+  a {
+    font-size: inherit;
+    text-decoration: none;
+    color: $secondary-color;
+    @include underline-hover-gradient;
+  }
+}
