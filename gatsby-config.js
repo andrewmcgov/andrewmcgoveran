@@ -49,7 +49,7 @@ module.exports = {
             options: {
               username: 'andrewmcgov',
               gistDefaultCssInclude: true,
-              gistCssPreload: true,
+              gistCssPreload: false,
             },
           },
         ],
