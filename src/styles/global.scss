@@ -26,13 +26,19 @@ h3 {
 }
 
 p,
-span,
 a,
+span,
+ul,
+li,
+div {
+  color: $primary-text;
+}
+
+p,
 ul,
 li,
 div {
   font-family: 'Libre Franklin', sans-serif;
-  color: $primary-text;
 }
 
 p,
@@ -48,4 +54,26 @@ h4 {
   a {
     text-decoration: none;
   }
+}
+
+code {
+  border-radius: 3px;
+  padding: 3px;
+  background: #ececec;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+  font-size: 1.3rem;
+}
+
+.gist .blob-code-inner span {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+  font-size: 12px;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.gist {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }

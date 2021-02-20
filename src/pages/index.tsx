@@ -17,8 +17,8 @@ type IndexProps = PageProps<PageQuery>;
 function IndexPage({data}: IndexProps) {
   return (
     <Layout>
-      <Seo title="Home" />
-      <Page title="Home" titleHidden>
+      <Seo title="Andrew McGoveran" />
+      <Page title="Andrew McGoveran" titleHidden>
         <Home recentPosts={data.allMarkdownRemark.edges} />
       </Page>
     </Layout>
@@ -36,6 +36,7 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
+            tags
           }
         }
       }

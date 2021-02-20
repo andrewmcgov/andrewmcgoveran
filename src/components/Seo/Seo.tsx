@@ -8,6 +8,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
+import favicon16 from '../../images/favicon-16x16.png';
+import favicon32 from '../../images/favicon-32x32.png';
+import DEFAULT_IMAGE from '../../images/headshot-circle.png';
 
 interface Props {
   description?: string;
@@ -16,7 +19,13 @@ interface Props {
   title: string;
 }
 
-export function Seo({description = '', lang = 'en', meta = [], title}: Props) {
+export function Seo({
+  description = '',
+  lang = 'en',
+  meta = [],
+  title,
+  image,
+}: Props) {
   const {site} = useStaticQuery(
     graphql`
       query {
@@ -58,6 +67,10 @@ export function Seo({description = '', lang = 'en', meta = [], title}: Props) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: image || DEFAULT_IMAGE,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -79,6 +92,18 @@ export function Seo({description = '', lang = 'en', meta = [], title}: Props) {
           rel: 'stylesheet',
           href:
             'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,600;1,600&family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '16x16',
+          href: `${favicon16}`,
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '32x32',
+          href: `${favicon32}`,
         },
       ]}
     />

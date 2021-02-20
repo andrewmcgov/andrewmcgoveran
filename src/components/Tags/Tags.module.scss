@@ -1,0 +1,12 @@
+.Tag {
+  margin: 2rem 0;
+}
+
+.Tag {
+  background: rgb(221, 221, 221);
+  background: $gradient;
+  color: $white;
+  border-radius: 3px;
+  padding: 4px;
+  margin-right: 0.5rem;
+}

@@ -7,7 +7,7 @@ function AboutPage() {
   return (
     <Layout>
       <Seo title="About" />
-      <Page title="Hi! I'm Andrew">
+      <Page title="Hi! I'm Andrew.">
         <p>I am a web developer from Ottawa, Ontario. 🇨🇦</p>
         <p>
           I currently work at <a href="https://www.shopify.ca/">Shopify</a>{' '}

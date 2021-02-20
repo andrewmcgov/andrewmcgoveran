@@ -6,6 +6,7 @@ export type PostPreviewEdge = {
       date: string;
       slug: string;
       title: string;
+      tags: string[] | null;
     };
   };
 };

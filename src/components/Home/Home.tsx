@@ -22,9 +22,9 @@ export function Home({recentPosts}: Props) {
         </div>
       </section>
       <section>
-        <h2 className={styles.Gradient}>Recent Posts</h2>
+        <h2>Recent Posts</h2>
         {recentPosts.map(post => (
-          <BlogPostPreview post={post} />
+          <BlogPostPreview post={post} key={post.node.id} />
         ))}
       </section>
     </>
