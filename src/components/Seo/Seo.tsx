@@ -17,6 +17,7 @@ interface Props {
   lang?: string;
   meta?: [];
   title: string;
+  image?: string;
 }
 
 export function Seo({
