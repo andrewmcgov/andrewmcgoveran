@@ -14,7 +14,7 @@ export function Home({recentPosts}: Props) {
       <section className={styles.Splash}>
         <div className={styles.Image}>
           <StaticImage
-            src="../../images/headshot.jpg"
+            src="../../images/headshot.jpeg"
             alt="My headshot"
             width={300}
             height={300}
