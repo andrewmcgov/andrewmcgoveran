@@ -10,7 +10,7 @@ import Helmet from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 import favicon16 from '../../images/favicon-16x16.png';
 import favicon32 from '../../images/favicon-32x32.png';
-import DEFAULT_IMAGE from '../../images/headshot-circle.png';
+import DEFAULT_IMAGE from '../../images/og-image.png';
 
 interface Props {
   description?: string;
