@@ -1,0 +1,25 @@
+---
+slug: '/blog/flexbox-demo'
+date: '2021-04-03'
+title: 'Visual flexbox demo'
+tags: ['css', 'flexbox']
+---
+
+## TL;DR
+
+I made a flexbox demo to provide a visual for what the main flexbox properties do. Check it out at [https://flexboxdemo.netlify.app/](https://flexboxdemo.netlify.app/) or see the embedded version below 👇
+
+## The backstory
+
+Four years ago while I was learning the basics of web development, I was learning how to use flexbox for layouts. I wanted a way to see the change happen when I changed the values of the main flex box properties. I was able to hack together a [codepen](https://codepen.io/MrAndrewMcG/pen/MJybNp) using some very scrappy jquery change the values of `flex-direction`, `justify-content` , and `align-items` on my flex container.
+
+At the time it was the only useful thing I had ever made on the web, so this past summer I decided to do a remake and deploy it for real. Here is what I ended up with (isolated version [here](https://flexboxdemo.netlify.app/)):
+
+<iframe src="https://flexboxdemo.netlify.app/"
+     style="width:100%; height:700px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Flexbox demo"
+   ></iframe>
+
+I really enjoyed making this because it took me out of my normal workflow. No React, TypeScript, or bundler needed. Just a simple `index.html`, `index.js`, and `styles.css` setup. I think this was also the first time I really used CSS variables, and discovered that you [cannot use CSS variables in media query selectors](https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries) 👎 (this has kept me using `sass` in side projects since).
+
+Hopefully this is a helpful resource next time you are trying to remember the difference between `flex-direction` and `justify-content`!

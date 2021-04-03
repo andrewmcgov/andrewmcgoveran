@@ -1,5 +1,5 @@
 ---
-slug: '/blog/2021-02-20-typescript-aliases'
+slug: '/blog/typescript-aliases'
 date: '2021-02-20'
 title: 'TypeScript aliases to help clean up import statements'
 tags: ['TypeScript', 'tsconfig']
