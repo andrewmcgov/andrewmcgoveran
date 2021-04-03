@@ -1,5 +1,5 @@
 ---
-slug: '/blog/2021-02-15-hello-world'
+slug: '/blog/hello-world'
 date: '2021-02-15'
 title: 'Hello world'
 ---
