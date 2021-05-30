@@ -46,11 +46,10 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-embed-gist',
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              username: 'andrewmcgov',
-              gistDefaultCssInclude: true,
-              gistCssPreload: false,
+              noInlineHighlight: true,
+              showLineNumbers: true,
             },
           },
         ],
