@@ -7,7 +7,13 @@ tags: ['TypeScript', 'tsconfig']
 
 As a TypeScript project grows, you might get tired of your imports looking like this:
 
-`gist:andrewmcgov/9ec6e8a6643fa3173ac7fc8890266d67#imports.tsx`
+```javascript
+import {Button, Select, TextField} from '../../../../../../../../components';
+import {useHistory} from '../../../../../../../../hooks';
+import {getCacheValue} from '../../../../../../../../utilities';
+```
+
+<!-- `gist:andrewmcgov/9ec6e8a6643fa3173ac7fc8890266d67#imports.tsx` -->
 
 When it comes time to move this file to another directory, you might end up with broken imports wondering if you should import from `'../../../../components'` or `'../../../../../../components'`. This can cause a frustrating delay as you count up the folders between your current file and the one you are importing.
 
@@ -15,8 +21,22 @@ Fortunately there is an easy way to clean up these top level imports with a smal
 
 In our example, the `components`, `hooks`, and `utilities` folders are all at the same level as our `tsconfig.json` file. By adding the line below to our config file, we can now import directly from these folders anywhere in our project.
 
-`gist:andrewmcgov/9ec6e8a6643fa3173ac7fc8890266d67#tsconfig.json?highlights=4`
+```json
+{
+  "compilerOptions": {
+    "other": "options",
+    // highlight-next-line
+    "baseUrl": "./"
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+```
 
-`gist:andrewmcgov/9ec6e8a6643fa3173ac7fc8890266d67#imports-fixed.tsx`
+```javascript
+import {Button, Select, TextField} from 'components';
+import {useHistory} from 'hooks';
+import {getCacheValue} from 'utilities';
+```
 
 The `baseUrl` option is documented [here](https://www.typescriptlang.org/tsconfig#baseUrl). If you need to get more specific for different modules, you can combine `baseUrl` with `paths`, documented [here](https://www.typescriptlang.org/tsconfig#paths).

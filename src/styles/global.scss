@@ -62,6 +62,13 @@ h4 {
 
 code {
   border-radius: 3px;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+  font-size: 1.3rem;
+}
+
+p code {
+  border-radius: 3px;
   padding: 3px;
   background: #ececec;
   font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
@@ -69,15 +76,30 @@ code {
   font-size: 1.3rem;
 }
 
-.gist .blob-code-inner span {
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
-    monospace;
-  font-size: 12px;
-  white-space: pre;
-  word-wrap: normal;
+// Prism syntax highlighting
+
+pre {
+  border-radius: 5px;
 }
 
-.gist {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+.gatsby-highlight-code-line {
+  background-color: #002a4a;
+  display: block;
+  margin-left: -0.25em;
+  padding-right: 1em;
+  border-left: 0.25em solid #f99;
+}
+
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding-left: 2.8em;
+}
+
+.line-numbers .line-numbers-rows {
+  padding-top: 1em;
+  border-right: none;
+  span {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+  }
 }
