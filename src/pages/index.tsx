@@ -7,7 +7,7 @@ import {Home} from '../components/Home';
 import {Page} from '../components/Page';
 
 type PageQuery = {
-  allMarkdownRemark: {
+  allMdx: {
     edges: PostPreviewEdge[];
   };
 };
@@ -19,7 +19,7 @@ function IndexPage({data}: IndexProps) {
     <Layout>
       <Seo title="Andrew McGoveran" />
       <Page title="Andrew McGoveran" titleHidden>
-        <Home recentPosts={data.allMarkdownRemark.edges} />
+        <Home recentPosts={data.allMdx.edges} />
       </Page>
     </Layout>
   );
@@ -27,10 +27,9 @@ function IndexPage({data}: IndexProps) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+    allMdx(sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
-          id
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
