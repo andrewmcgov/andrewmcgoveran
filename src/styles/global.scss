@@ -27,10 +27,9 @@ h3 {
 
 p,
 a,
-span,
+// span,
 ul,
-li,
-div {
+li {
   color: $primary-text;
 }
 
@@ -40,8 +39,7 @@ p a {
 
 p,
 ul,
-li,
-div {
+li {
   font-family: 'Libre Franklin', sans-serif;
 }
 
@@ -78,28 +76,28 @@ p code {
 
 // Prism syntax highlighting
 
-pre {
-  border-radius: 5px;
-}
+// pre {
+//   border-radius: 5px;
+// }
 
-.gatsby-highlight-code-line {
-  background-color: #002a4a;
-  display: block;
-  margin-left: -0.25em;
-  padding-right: 1em;
-  border-left: 0.25em solid #f99;
-}
+// .gatsby-highlight-code-line {
+//   background-color: #002a4a;
+//   display: block;
+//   margin-left: -0.25em;
+//   padding-right: 1em;
+//   border-left: 0.25em solid #f99;
+// }
 
-.gatsby-highlight pre[class*='language-'].line-numbers {
-  padding-left: 2.8em;
-}
+// .gatsby-highlight pre[class*='language-'].line-numbers {
+//   padding-left: 2.8em;
+// }
 
-.line-numbers .line-numbers-rows {
-  padding-top: 1em;
-  border-right: none;
-  span {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    padding-left: 1rem;
-  }
-}
+// .line-numbers .line-numbers-rows {
+//   padding-top: 1em;
+//   border-right: none;
+//   span {
+//     font-size: 1.3rem;
+//     line-height: 1.5;
+//     padding-left: 1rem;
+//   }
+// }

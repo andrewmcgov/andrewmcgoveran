@@ -5,13 +5,15 @@ title: 'TypeScript aliases to help clean up import statements'
 tags: ['TypeScript', 'tsconfig']
 ---
 
+import {SyntaxHighlighter} from '../components/SyntaxHighlighter';
+
 As a TypeScript project grows, you might get tired of your imports looking like this:
 
-```javascript
-import {Button, Select, TextField} from '../../../../../../../../components';
+<SyntaxHighlighter>
+  {`import {Button, Select, TextField} from '../../../../../../../../components';
 import {useHistory} from '../../../../../../../../hooks';
-import {getCacheValue} from '../../../../../../../../utilities';
-```
+import {getCacheValue} from '../../../../../../../../utilities';`}
+</SyntaxHighlighter>
 
 <!-- `gist:andrewmcgov/9ec6e8a6643fa3173ac7fc8890266d67#imports.tsx` -->
 
@@ -21,22 +23,20 @@ Fortunately there is an easy way to clean up these top level imports with a smal
 
 In our example, the `components`, `hooks`, and `utilities` folders are all at the same level as our `tsconfig.json` file. By adding the line below to our config file, we can now import directly from these folders anywhere in our project.
 
-```json
-{
+<SyntaxHighlighter language="json" highlightedLines={[4]}>
+  {`{
   "compilerOptions": {
     "other": "options",
-    // highlight-next-line
     "baseUrl": "./"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
-}
-```
-
-```javascript
-import {Button, Select, TextField} from 'components';
+}`}
+</SyntaxHighlighter>
+<SyntaxHighlighter>
+  {`import {Button, Select, TextField} from 'components';
 import {useHistory} from 'hooks';
-import {getCacheValue} from 'utilities';
-```
+import {getCacheValue} from 'utilities';`}
+</SyntaxHighlighter>
 
 The `baseUrl` option is documented [here](https://www.typescriptlang.org/tsconfig#baseUrl). If you need to get more specific for different modules, you can combine `baseUrl` with `paths`, documented [here](https://www.typescriptlang.org/tsconfig#paths).

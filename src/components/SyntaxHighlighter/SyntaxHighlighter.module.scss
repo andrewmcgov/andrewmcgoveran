@@ -1,0 +1,28 @@
+.Pre {
+  text-align: left;
+  margin: 2rem 0;
+  padding: 1rem;
+  overflow: scroll;
+  border-radius: 5px;
+}
+
+.Line {
+  display: table-row;
+  line-height: 2.2rem;
+}
+
+.LineNumber {
+  display: table-cell;
+  text-align: right;
+  padding-right: 1em;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.HighlightedLine {
+  background-color: red;
+}
+
+.LineContent {
+  // display: table-cell;
+}
