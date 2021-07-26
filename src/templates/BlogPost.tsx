@@ -31,7 +31,7 @@ export default function BlogPost(props: BlogPostProps) {
 
   return (
     <Layout>
-      <article>
+      <article className={styles.BlogWrapper}>
         <Page title={title}>
           <Seo title={title} />
           <div className={styles.Meta}>

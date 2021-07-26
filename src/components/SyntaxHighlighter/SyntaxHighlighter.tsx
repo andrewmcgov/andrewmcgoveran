@@ -30,25 +30,26 @@ export function SyntaxHighlighter({
               const lineNumber = i + 1;
               const isHighlightedLine =
                 highlightedLines && highlightedLines.includes(lineNumber);
-              const lineClassName = classNames(
-                styles.Line,
-                isHighlightedLine && styles.HighlightedLine
-              );
+
+              console.log(isHighlightedLine);
+
+              const tokens = line.map((token, key) => (
+                <span
+                  {...getTokenProps({
+                    token,
+                    key,
+                  })}
+                />
+              ));
 
               return (
-                <div
-                  {...getLineProps({line, key: i, className: lineClassName})}
-                >
+                <div {...getLineProps({line, key: i, className: styles.Line})}>
                   <span className={styles.LineNumber}>{lineNumber}</span>
-                  {line.map((token, key) => (
-                    <span
-                      {...getTokenProps({
-                        token,
-                        key,
-                        className: styles.LineContent,
-                      })}
-                    />
-                  ))}
+                  {isHighlightedLine ? (
+                    <span className={styles.HighlightedLine}>{tokens}</span>
+                  ) : (
+                    tokens
+                  )}
                 </div>
               );
             })}

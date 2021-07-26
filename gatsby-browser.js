@@ -1,7 +1,33 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from 'react';
+import {MDXProvider} from '@mdx-js/react';
 
-// You can delete this file if you're not using it
+import {SyntaxHighlighter} from './src/components/SyntaxHighlighter';
+
+const components = {
+  pre: props => {
+    const className = props.children.props.className || '';
+    const matches = className.match(/language-(?<lang>.*)/);
+    const language =
+      matches && matches.groups && matches.groups.lang
+        ? matches.groups.lang
+        : '';
+
+    const highlightedLines = props.children.props.highlightedLines
+      ?.split(',')
+      .map(Number);
+    console.log(highlightedLines);
+
+    return (
+      <SyntaxHighlighter
+        language={language}
+        highlightedLines={highlightedLines}
+      >
+        {props.children.props.children.trim()}
+      </SyntaxHighlighter>
+    );
+  },
+};
+
+export const wrapRootElement = ({element}) => {
+  return <MDXProvider components={components}>{element}</MDXProvider>;
+};

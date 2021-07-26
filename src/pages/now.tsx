@@ -12,12 +12,12 @@ function NowPage() {
         <ul>
           <li>Living in Ottawa, Ontario</li>
           <li>Working at Shopify</li>
-          <li>Learning some Rails</li>
           <li>
-            Trying to get some exercise during quarentine by riding my bike
-            trainer on Zwift
+            Working on{' '}
+            <a href="https://css-for-js.dev/">CSS for JS devs course</a>
           </li>
-          <li>Welcoming our new cat, Penny, to our home</li>
+          <li>Getting outside as much as possible</li>
+          <li>Growing way too many tomatoes</li>
         </ul>
 
         <p className={styles.Info}>
