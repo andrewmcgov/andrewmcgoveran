@@ -16,6 +16,8 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    'gatsby-remark-images',
+    'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -42,14 +44,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-plugin-page-creator',
       options: {
-        plugins: [
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-images`,
             options: {
-              noInlineHighlight: true,
-              showLineNumbers: true,
+              maxWidth: 1000,
+              linkImagesToOriginal: false,
             },
           },
         ],

@@ -7,7 +7,7 @@ import {Page} from '../components/Page';
 import {BlogPostPreview} from '../components/BlogPostPreview';
 
 type PageQuery = {
-  allMarkdownRemark: {
+  allMdx: {
     edges: PostPreviewEdge[];
   };
 };
@@ -15,7 +15,7 @@ type PageQuery = {
 type BlogProps = PageProps<PageQuery>;
 
 function BlogPage({data}: BlogProps) {
-  const postsMarkup = data.allMarkdownRemark.edges.map(post => {
+  const postsMarkup = data.allMdx.edges.map(post => {
     return <BlogPostPreview post={post} />;
   });
 
@@ -31,7 +31,7 @@ export default BlogPage;
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+    allMdx(sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           id

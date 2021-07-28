@@ -1,5 +1,7 @@
 import React from 'react';
 import {graphql, PageProps} from 'gatsby';
+import {MDXProvider} from '@mdx-js/react';
+import {MDXRenderer} from 'gatsby-plugin-mdx';
 import {Seo} from '../components/Seo';
 import {Layout} from '../components/Layout';
 import {Page} from '../components/Page';
@@ -7,29 +9,29 @@ import {Tags} from '../components/Tags';
 import styles from '../styles/BlogPost.module.scss';
 
 type PageQuery = {
-  markdownRemark: {
+  mdx: {
     frontmatter: {
       date: string;
       slug: string;
       title: string;
       tags: string[] | null;
     };
-    html: string;
+    body: string;
   };
 };
 
 type BlogPostProps = PageProps<PageQuery>;
 
 export default function BlogPost(props: BlogPostProps) {
-  const {markdownRemark} = props.data;
+  const {mdx} = props.data;
   const {
     frontmatter: {title, date, tags},
-    html,
-  } = markdownRemark;
+    body,
+  } = mdx;
 
   return (
     <Layout>
-      <article>
+      <article className={styles.BlogWrapper}>
         <Page title={title}>
           <Seo title={title} />
           <div className={styles.Meta}>
@@ -37,10 +39,9 @@ export default function BlogPost(props: BlogPostProps) {
           </div>
           <Tags tags={tags} />
 
-          <div
-            className={styles.Content}
-            dangerouslySetInnerHTML={{__html: html}}
-          />
+          <MDXProvider components={{}}>
+            <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
+          </MDXProvider>
         </Page>
       </article>
     </Layout>
@@ -49,8 +50,8 @@ export default function BlogPost(props: BlogPostProps) {
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(frontmatter: {slug: {eq: $slug}}) {
-      html
+    mdx(frontmatter: {slug: {eq: $slug}}) {
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         slug

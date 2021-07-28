@@ -1,0 +1,42 @@
+.Pre {
+  text-align: left;
+  margin: 2rem 0;
+  padding: 1rem;
+  overflow: scroll;
+  border-radius: 5px;
+
+  code {
+    display: block;
+    width: 100%;
+
+    span {
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+        monospace;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.Line {
+  display: flex;
+  line-height: 2.2rem;
+  width: 100%;
+}
+
+.LineNumber {
+  display: inline-block;
+  width: 2.5rem;
+  min-width: 2.5rem;
+  text-align: center;
+  padding-right: 1em;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.HighlightedLine {
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(63, 66, 85);
+  border-left: 3px solid rgb(80, 250, 123);
+  margin-left: -3px;
+}

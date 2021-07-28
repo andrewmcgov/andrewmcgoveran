@@ -13,6 +13,8 @@ $white: #f8f7f7;
 
 $gradient: linear-gradient(45deg, $cg-blue, $dark-cornflower-blue);
 
+$primary-font: 'Libre Franklin', sans-serif;
+
 @mixin gradient {
   background-image: $gradient;
 }
