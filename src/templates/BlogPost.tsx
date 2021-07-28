@@ -34,10 +34,12 @@ export default function BlogPost(props: BlogPostProps) {
       <article className={styles.BlogWrapper}>
         <Page title={title}>
           <Seo title={title} />
-          <div className={styles.Meta}>
-            <span>{date}</span>
+          <div className={styles.MetaWrapper}>
+            <div className={styles.Meta}>
+              <span>{date}</span>
+            </div>
+            <Tags tags={tags} />
           </div>
-          <Tags tags={tags} />
 
           <MDXProvider components={{}}>
             <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
