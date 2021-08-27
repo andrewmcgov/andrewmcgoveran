@@ -13,7 +13,7 @@ import favicon32 from '../../images/favicon-32x32.png';
 import DEFAULT_IMAGE from '../../images/og-image.png';
 
 interface Props {
-  description?: string;
+  description?: string | null;
   lang?: string;
   meta?: [];
   title: string;
