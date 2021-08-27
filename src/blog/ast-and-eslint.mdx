@@ -1,15 +1,15 @@
 ---
 slug: '/blog/ast-and-eslint'
 date: '2021-07-27'
-title: 'How to write an Eslint rule using Abstract Syntax Trees'
+title: 'How to write an ESLint rule using Abstract Syntax Trees'
 tags: ['AST', 'eslint']
 ---
 
 import {Banner} from '../components/Banner';
 
-Abstract Syntax Tree (AST) has always been one of those very computer science-y terms that I have found quite intimidating. I recently had the chance to dig into ASTs at work while making a new ESLint rule, and it turns out that they are not so difficult to understand after all. In this article I'll provide some background info about ASTs, and how javascript developers can use them to make things like ESLint rules or babel plugins.
+Abstract Syntax Tree (AST) has always been one of those scary computer science-y terms that I have found intimidating. I recently had the chance to dig into ASTs at work while making a new ESLint rule, and it turns out that they are not so difficult to understand after all. In this article I'll provide some background info about ASTs, and how javascript developers can use them to make things like ESLint rules and Babel plugins.
 
-An AST is a tree-like data structure that represents code written in any programming language. This tree like structure contains `nodes` that represent variables, functions, and expressions. If we think of the code we write as code for humans, we can think of an AST as code for computers. ASTs can be used to programatically check, correct, transform, and compile our code. They are used in just about every computer application, including the browser you are reading this in!
+An AST is a tree-like data structure that represents code written in any programming language. This tree like structure contains **nodes** that represent variables, functions, and expressions. If we think of the code we write as _code for humans_, we can think of an AST as _code for computers_. ASTs can be used to programatically check, correct, transform, and compile our code. They are used in just about every computer application, including the browser you are reading this in!
 
 <Banner status="info">
   <p>
@@ -50,7 +50,7 @@ If you haven't used it before, I recommend playing around with it before continu
 
 If you click on part of the code on the left, the corresponding node will be highlighted in the AST on the right. Here is the code from our example above, try pasting it into AST explorer and testing it out. You'll find the same nodes in the diagram above.
 
-```javascript highlightedLines=4
+```javascript
 const name = 'Andrew';
 
 function sayHello(name) {
@@ -64,7 +64,7 @@ sayHello(name);
 
 Now that we know that an AST is a tree-like representation of our code that is easier for computers to work with, how can we use it to our advantage as developers?
 
-[Babel](https://babeljs.io/) is a great example of a developer tool that uses AST's to represent. Babel is often used to allow developers to write next generation Javascript and compile it back to a more widely supported version to run in the browser. For example, using Babel we could take advantage of a new feature like [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), while still supporting older browsers that do not support the feature.
+[Babel](https://babeljs.io/) is a great example of a developer tool that uses AST's. Babel is often used to allow developers to write next generation Javascript and compile it back to a more widely supported version to run in the browser. For example, using Babel we could take advantage of a new feature like [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), while still supporting older browsers that do not support the feature.
 
 Babel does this by turning the code you write into an AST, running the AST through a series of [plugins](https://babeljs.io/docs/en/plugins/) that can make changes to the AST, and then turning the AST with changes back into standard Javascript code.
 
@@ -81,7 +81,7 @@ But this post isn't about Babel plugins, so let's turn our focus to ESLint!
 
 ## ESLint rules
 
-[ESLint](https://eslint.org/) is a tool that analyzes your code to find issues before they hit production. ESLint is built into most common code editors, so you can see any errors that come up as you write your code.
+[ESLint](https://eslint.org/) is a tool that analyzes your code to find issues before they hit production. ESLint is built into most code editors, so you can see any errors that come up as you write your code.
 
 As you might have guessed, ESLint uses an AST to analyze your code piece by piece. The AST is run through a series of [rules](https://eslint.org/docs/user-guide/configuring/rules) that check to ensure syntax is correct and best practices are followed.
 
@@ -91,7 +91,7 @@ ESLint comes with many rules built-in, and you can choose which ones you want to
 
 For the rest of this article, we'll be rebuilding one of the built-in ESLint rules, [no-empty](https://eslint.org/docs/rules/no-empty). The rule ensures that developers do not leave empty block statements in their code.
 
-In the AST Explorer, lets replace the example code we were using with some code that we want to lint with our rule:
+In the AST Explorer, lets replace the example code we were using with the code below that we want to lint with our rule. We'll come back to this after learning a bit more about the structure of ESLint rules.
 
 ```jsx
 // Invalid, should error in ESLint
@@ -114,7 +114,7 @@ while (foo) {
 
 #### Files
 
-There is a standard format for projects that include lint rules that sees each rule have three files:
+There is a standard format for ESLint rules. Each rule haves three files:
 
 - `lib/rules/rule-name.js` - The source file for the rule
 - `tests/lib/rules/rule-name.test.js` - A test file
@@ -129,7 +129,7 @@ The source file for a lint rule exports an object that must contain two main pro
 - `meta` - An object containing information about the rule
 - `create` - a function that contains the logic for linting your code.
 
-The skeleton of an our `no-empty` rule looks like this:
+The skeleton of our `no-empty` rule would like this:
 
 ```jsx
 module.exports = {
@@ -179,11 +179,11 @@ create: function(context) {
 
 ## Building rules in AST Explorer
 
-Now is a great time to mention that AST Explorer has another great feature that lets you build and test rules right inside your browser. At the top of AST Explorer you will notice another toggle for `Transform`. Lets set that to `ESLint v4`.
+AST Explorer has another great feature that lets you build and test rules right inside your browser. At the top of AST Explorer you will notice another toggle for `Transform`. Lets set that to `ESLint v4`.
 
-You'll notice two new sections come up from the bottom of the window. On the left we can paste in our lint rule code, and on the right you will see the output of our code.
+You'll notice two new sections come up from the bottom of the window. On the bottom left we can paste in our lint rule code, and on the bottom right you will see the output of our code.
 
-Lets paste in what we have so far, I've added a `console.log` that logs the `node` in the FunctionDeclaration callback so we can see if our rule is working:
+Lets paste in what we have so far, I've added a `console.log` that logs the `node` in the `FunctionDeclaration` callback so we can see if our rule is working:
 
 ```jsx
 module.exports = {
@@ -209,29 +209,29 @@ module.exports = {
 };
 ```
 
-Open up your browser console and you should see the four `BlockStatement` objects that represent the four block statements in the code we are linting. Inside you will find lots of information about node, including a `body`. We can use this `body` value to check if our block statements are empty.
+Open up your browser console and you should see the four `BlockStatement` objects that represent the four block statements in the code we are linting. Inside those objects you will find lots of information about node, including a `body`. We can use this `body` value to check if our block statements are empty.
 
 Now we can fill in our `BlockStatement` function with a basic implementation of this rule:
 
 ```jsx
 create: function (context) {
-    return {
-      BlockStatement: (node) => {
-				// If the node body is empty, return
-				if (node.body.length !== 0) {
-					return;
-				}
+  return {
+    BlockStatement: (node) => {
+      // If the node body is empty, return
+      if (node.body.length !== 0) {
+        return;
+      }
 
-				context.report({
-			    node: node,
-			    message: "Block statements must not be empty"
-				});
-			},
-    };
-  },
+      context.report({
+        node: node,
+        message: "Block statements must not be empty"
+      });
+    },
+  };
+},
 ```
 
-A couple important things to note here
+A couple important things to note here:
 
 ### Early returns
 
@@ -249,11 +249,13 @@ After updating our lint rule in AST Explorer, we can now see errors reported on 
 
 ### Making our rule better
 
-Our implementation of `no-empty` works is very basic, and the real implementation provides a bit more flexibility. Now that we have learned the basics of ASTs and ESLint rules, see if you can extend the rule we have so far to support these edge cases:
+Our implementation of `no-empty` is very basic, and the real implementation provides a bit more flexibility. Now that we have learned the basics of ASTs and ESLint rules, see if you can extend the rule we have so far to support these edge cases:
 
 - Do not report if the block statement only contains comments
 - Do not report if the block statement parent is a function (empty functions are generally allowed)
 - This one is trickier. See if our can get the rule to report on empty `switch` statements
+
+**Hint:** Use the AST explorer to find the the data you need implement these additions to the rule.
 
 ### Thats all!
 
