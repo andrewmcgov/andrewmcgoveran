@@ -1,0 +1,16 @@
+.Banner {
+  padding: 1rem 4rem;
+  margin: 5rem 0;
+  background-color: grey;
+  border-radius: 0 10px 10px 0;
+}
+
+.BannerInfo {
+  background-color: rgba(255, 226, 40, 0.45);
+  border-left: 5px solid rgba(255, 226, 40, 1);
+}
+
+.BannerWarning {
+  background-color: rgba(225, 0, 0, 0.22);
+  border-left: 5px solid rgba(225, 0, 0, 1);
+}

@@ -15,6 +15,7 @@ type PageQuery = {
       slug: string;
       title: string;
       tags: string[] | null;
+      description?: string | null;
     };
     body: string;
   };
@@ -25,7 +26,7 @@ type BlogPostProps = PageProps<PageQuery>;
 export default function BlogPost(props: BlogPostProps) {
   const {mdx} = props.data;
   const {
-    frontmatter: {title, date, tags},
+    frontmatter: {title, date, tags, description},
     body,
   } = mdx;
 
@@ -33,11 +34,13 @@ export default function BlogPost(props: BlogPostProps) {
     <Layout>
       <article className={styles.BlogWrapper}>
         <Page title={title}>
-          <Seo title={title} />
-          <div className={styles.Meta}>
-            <span>{date}</span>
+          <Seo title={title} description={description} />
+          <div className={styles.MetaWrapper}>
+            <div className={styles.Meta}>
+              <span>{date}</span>
+            </div>
+            <Tags tags={tags} />
           </div>
-          <Tags tags={tags} />
 
           <MDXProvider components={{}}>
             <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
@@ -57,6 +60,7 @@ export const pageQuery = graphql`
         slug
         title
         tags
+        description
       }
     }
   }
