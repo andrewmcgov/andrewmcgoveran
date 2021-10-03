@@ -23,10 +23,11 @@ $primary-font: 'Libre Franklin', sans-serif;
   @include gradient;
   background-color: $dark-cornflower-blue;
   background-size: 100%;
-  -webkit-background-clip: text;
   -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  -webkit-text-fill-color: transparent;
 }
 
 @mixin underline-hover-gradient {
