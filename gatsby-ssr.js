@@ -15,7 +15,6 @@ const components = {
     const highlightedLines = props.children.props.highlightedLines
       ?.split(',')
       .map(Number);
-    console.log(highlightedLines);
 
     return (
       <SyntaxHighlighter

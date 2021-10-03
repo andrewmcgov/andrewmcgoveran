@@ -31,8 +31,6 @@ export function SyntaxHighlighter({
               const isHighlightedLine =
                 highlightedLines && highlightedLines.includes(lineNumber);
 
-              console.log(isHighlightedLine);
-
               const tokens = line.map((token, key) => (
                 <span
                   {...getTokenProps({
