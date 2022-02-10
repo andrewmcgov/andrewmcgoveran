@@ -23,7 +23,7 @@
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-remark": "^2.8.37",
     "gatsby-transformer-sharp": "^3.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prism-react-renderer": "^1.2.1",
     "prism-theme-night-owl": "^1.4.0",
     "prismjs": "^1.24.1",
